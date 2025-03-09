@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Random Quotes Generator</title>
+  </head>
+  <body>
+    <h1>Random Quotes Generator</h1>
+
+    <div class="quotes">
+      <ul class="share-box">
+        <i class="fa-solid fa-xmark close"></i>
+
+        <li class="share-li">
+          <i class="fa-brands fa-facebook facebook"></i>
+          <a href="">facebook</a>
+        </li>
+        <li class="share-li">
+          <i class="fa-brands fa-x-twitter twitter"></i>
+          <a href="">twitter</a>
+        </li>
+        <li class="share-li">
+          <i class="fa-brands fa-whatsapp whatsapp"></i>
+          <a href="">whatsapp</a>
+        </li>
+      </ul>
+      <i class="fa-solid fa-heart heart" title="add to favourites"></i>
+      <i class="fa-solid fa-share share" title="share"></i>
+      <i class="fa-solid fa-copy copy" title="copy"></i>
+      <span class="quote-id">0</span>
+      <div class="quote-display">
+        <h2></h2>
+
+        <p>- <span class="quote-author"></span> -</p>
+      </div>
+      <div class="buttons">
+        <button class="generate">Generate Quote</button>
+        <button class="auto">Auto Generate</button>
+        <!-- <button class="stop">Stop Generate</button> -->
+      </div>
+    </div>
+    <div class="auto-status"></div>
+
+    <div class="alert">
+      <i class="fa-solid fa-xmark alert-close"></i>
+      <p class="alert-message">This is an alert message</p>
+    </div>
+
+    <div class="favourite-seciton">
+      <h2>Favourite Quotes</h2>
+      <ul class="favourite-quotes"></ul>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
