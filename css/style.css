@@ -12,7 +12,8 @@ body {
 }
 
 .alert {
-  position: absolute;
+  position: fixed;
+  z-index: 1000;
   top: 90px;
   left: 20px;
   display: flex;

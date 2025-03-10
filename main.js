@@ -3,7 +3,6 @@ const quoteText = document.querySelector(".quote-display h2");
 const quoteAuthor = document.querySelector(".quote-display span");
 const btnGenerate = document.querySelector(".buttons .generate");
 const btnAuto = document.querySelector(".buttons .auto");
-const statusText = document.querySelector(".auto-status");
 
 let alertMessage = document.querySelector(".alert-message");
 let alertClose = document.querySelector(".alert-close");
