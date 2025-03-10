@@ -18,6 +18,7 @@ let shareLi = document.querySelectorAll(".share-box .share-li");
 
 const heartIcon = document.querySelector(".quotes .heart");
 const favoritesList = document.querySelector(".favourite-quotes");
+const clearAllFav = document.querySelector(".clear-favorites");
 let favoriteQuotes = JSON.parse(localStorage.getItem("favorites")) || [];
 
 const soundWave = document.querySelector(".sound-wave");
@@ -90,6 +91,20 @@ heartIcon.addEventListener("click", () => {
     displayFavourites();
   } else {
     showAlert("Quote already added to favorites!", "error");
+  }
+});
+
+clearAllFav.addEventListener("click", () => {
+  if (favoriteQuotes.length === 0) {
+    showAlert("No favorite quotes to clear!", "error");
+    return;
+  }
+
+  if (confirm("Are you sure you want to clear all favorite quotes?")) {
+    favoriteQuotes = [];
+    localStorage.removeItem("favorites");
+    showAlert("All favorite quotes cleared!", "success");
+    displayFavourites();
   }
 });
 
