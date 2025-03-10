@@ -26,10 +26,12 @@ body {
 }
 .alert.success {
   background-color: #4ca;
+  color: white;
 }
 
 .alert.error {
   background-color: #f44336;
+  color: white;
 }
 
 .alert.show {
@@ -170,6 +172,22 @@ ul.share-box .share-li i.twitter {
   position: relative;
 }
 
+.quote-display .play {
+  position: absolute;
+  background: #121128;
+  padding: 20px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: -21px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
 .quote-display h2 {
   padding: 30px 20px 25px 20px;
   font-size: 25px;
@@ -244,6 +262,7 @@ ul.share-box .share-li i.twitter {
   padding: 20px 0;
   border-bottom: 2px solid #aaa;
 }
+
 .favourite-seciton ul {
   list-style: none;
   margin: 0 0 0 20px;

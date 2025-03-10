@@ -18,10 +18,92 @@ let shareLi = document.querySelectorAll(".share-box .share-li");
 
 const heartIcon = document.querySelector(".quotes .heart");
 const favoritesList = document.querySelector(".favourite-quotes");
-
 let favoriteQuotes = JSON.parse(localStorage.getItem("favorites")) || [];
 
-const quotes = [];
+// let play = document.querySelector(".play");
+// let speech;
+
+// play.addEventListener("click", () => {
+//   if (play.classList.contains("fa-play")) {
+//     play.classList.remove("fa-play");
+//     play.classList.add("fa-pause");
+
+//     const quotePlay = quoteText.textContent;
+//     console.log(quotePlay);
+
+//     if (!speech) {
+//       speech = new SpeechSynthesisUtterance();
+//       speech.volume = 0.5;
+//       speech.rate = 1;
+//       speech.pitch = 1;
+
+//       speechSynthesis.onvoiceschanged = () => {
+//         const voices = speechSynthesis.getVoices();
+//         console.log(voices);
+//         if (voices.length > 0) {
+//           speech.voice = voices[5];
+//         }
+//       };
+
+//       speech.onend = () => {
+//         console.log("Speech finished");
+//         play.classList.remove("fa-pause");
+//         play.classList.add("fa-play");
+//       };
+//     }
+
+//     speech.text = quotePlay;
+//     speechSynthesis.speak(speech);
+//   } else {
+//     speechSynthesis.cancel();
+//     play.classList.remove("fa-pause");
+//     play.classList.add("fa-play");
+//   }
+// });
+
+let play = document.querySelector(".play");
+let speech = new SpeechSynthesisUtterance();
+
+speech.volume = 0.5;
+speech.rate = 1;
+speech.pitch = 1;
+
+function setVoice() {
+  const voices = speechSynthesis.getVoices();
+  if (voices.length > 0) {
+    speech.voice = voices[6] || voices[0];
+  }
+}
+
+if (speechSynthesis.getVoices().length > 0) {
+  setVoice();
+} else {
+  speechSynthesis.onvoiceschanged = () => {
+    setVoice();
+    speechSynthesis.onvoiceschanged = null;
+  };
+}
+
+play.addEventListener("click", () => {
+  if (play.classList.contains("fa-play")) {
+    play.classList.remove("fa-play");
+    play.classList.add("fa-pause");
+
+    const quotePlay = quoteText.textContent;
+
+    speech.text = quotePlay;
+    speechSynthesis.speak(speech);
+
+    speech.onend = () => {
+      play.classList.remove("fa-pause");
+      play.classList.add("fa-play");
+    };
+  } else {
+    speechSynthesis.cancel();
+    play.classList.remove("fa-pause");
+    play.classList.add("fa-play");
+  }
+});
 
 heartIcon.addEventListener("click", () => {
   const newQuote = {
@@ -137,15 +219,23 @@ alertClose.onclick = () => {
 let autoInterval;
 
 // Fetch quotes from API
+
+const quotes = [];
+
 async function getQuote() {
   try {
     const res = await fetch("quots.json");
     const data = await res.json();
-    quotes.push(...data);
 
-    displayQuote(random(quotes));
+    if (data.length > 0) {
+      quotes.push(...data);
+      displayQuote(random(quotes));
+    } else {
+      showAlert("No quotes found!", "error");
+    }
   } catch (err) {
     console.error("Error fetching quotes:", err);
+    showAlert("Failed to fetch quotes!", "error");
   }
 }
 getQuote();
