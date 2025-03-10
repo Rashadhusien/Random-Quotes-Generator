@@ -20,46 +20,7 @@ const heartIcon = document.querySelector(".quotes .heart");
 const favoritesList = document.querySelector(".favourite-quotes");
 let favoriteQuotes = JSON.parse(localStorage.getItem("favorites")) || [];
 
-// let play = document.querySelector(".play");
-// let speech;
-
-// play.addEventListener("click", () => {
-//   if (play.classList.contains("fa-play")) {
-//     play.classList.remove("fa-play");
-//     play.classList.add("fa-pause");
-
-//     const quotePlay = quoteText.textContent;
-//     console.log(quotePlay);
-
-//     if (!speech) {
-//       speech = new SpeechSynthesisUtterance();
-//       speech.volume = 0.5;
-//       speech.rate = 1;
-//       speech.pitch = 1;
-
-//       speechSynthesis.onvoiceschanged = () => {
-//         const voices = speechSynthesis.getVoices();
-//         console.log(voices);
-//         if (voices.length > 0) {
-//           speech.voice = voices[5];
-//         }
-//       };
-
-//       speech.onend = () => {
-//         console.log("Speech finished");
-//         play.classList.remove("fa-pause");
-//         play.classList.add("fa-play");
-//       };
-//     }
-
-//     speech.text = quotePlay;
-//     speechSynthesis.speak(speech);
-//   } else {
-//     speechSynthesis.cancel();
-//     play.classList.remove("fa-pause");
-//     play.classList.add("fa-play");
-//   }
-// });
+const soundWave = document.querySelector(".sound-wave");
 
 let play = document.querySelector(".play");
 let speech = new SpeechSynthesisUtterance();
@@ -91,17 +52,23 @@ play.addEventListener("click", () => {
 
     const quotePlay = quoteText.textContent;
 
-    speech.text = quotePlay;
-    speechSynthesis.speak(speech);
-
     speech.onend = () => {
       play.classList.remove("fa-pause");
       play.classList.add("fa-play");
+      soundWave.style.display = "none";
+      quoteId.style.display = "flex";
     };
+
+    soundWave.style.display = "flex";
+    quoteId.style.display = "none";
+    speech.text = quotePlay;
+    speechSynthesis.speak(speech);
   } else {
     speechSynthesis.cancel();
     play.classList.remove("fa-pause");
     play.classList.add("fa-play");
+    soundWave.style.display = "none";
+    quoteId.style.display = "flex";
   }
 });
 
