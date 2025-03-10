@@ -357,6 +357,23 @@ ul.share-box .share-li i.twitter {
   bottom: 5px;
 }
 
+footer {
+  background-color: #121128;
+  padding: 20px;
+  text-align: center;
+  color: #eee;
+}
+footer p {
+  margin: 0;
+}
+footer p i {
+  color: #ff2929;
+  margin-inline: 2px;
+}
+footer p a {
+  color: #756bff;
+}
+
 @keyframes scale-btn {
   0% {
     transform: scale(0.9);
