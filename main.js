@@ -206,7 +206,7 @@ const quotes = [];
 
 async function getQuote() {
   try {
-    const res = await fetch("quots.json");
+    const res = await fetch("quotes.json");
     const data = await res.json();
 
     if (data.length > 0) {
