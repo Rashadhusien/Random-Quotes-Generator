@@ -335,6 +335,7 @@ ul.share-box .share-li i.twitter {
   gap: 10px;
   border-radius: 6px;
   position: relative;
+  transition: 0.3s ease;
 }
 
 .favourite-seciton ul li i.heart {
@@ -354,6 +355,10 @@ ul.share-box .share-li i.twitter {
 
 .favourite-seciton ul li:nth-child(even) {
   background-color: #1d1a38;
+}
+
+.favourite-seciton ul li:hover {
+  background-color: #211c84;
 }
 
 .favourite-seciton ul li span.fav-qoute {
