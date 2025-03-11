@@ -73,7 +73,7 @@ ul.share-box {
   list-style-type: none;
   margin: 0;
   padding: 0;
-
+  width: 130px;
   background-color: #121128;
   position: absolute;
   right: -125px;
@@ -120,11 +120,15 @@ ul.share-box .share-li i.twitter {
   }
 }
 
-.quotes .copy,
-.quotes .heart,
-.quotes .share,
-.quotes .lang,
-.quotes .lang-span {
+.lang-love,
+.social-copy {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-copy,
+.lang-love {
   font-size: 20px;
   color: #aaa;
   position: absolute;
@@ -132,27 +136,18 @@ ul.share-box .share-li i.twitter {
   cursor: pointer;
 }
 
-.quotes .heart {
+.social-copy {
+  right: 20px;
+}
+
+.lang-love {
   left: 20px;
 }
 
-.quotes .lang {
-  left: 60px;
-}
-
-.quotes .lang-span {
-  font-size: 16px;
-  left: 90px;
-  text-transform: uppercase;
-
-  top: 21px;
-}
-
-.quotes .copy {
-  right: 60px;
-}
-.quotes .share {
-  right: 20px;
+.lang-love .languages {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .quotes .heart:hover {
