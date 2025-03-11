@@ -111,7 +111,7 @@ function applyLanguageSettings() {
     ? "مولد الاقتباسات العشوائية"
     : "Random Quotes Generator";
 
-  showAlert("language changed", "تم تغيير اللغة");
+  // showAlert("language changed", "تم تغيير اللغة");
   // Update the displayed quote's language without generating a new one
   const quoteText = document.querySelector(".quote-text");
   const quoteAuthor = document.querySelector(".quote-author");
