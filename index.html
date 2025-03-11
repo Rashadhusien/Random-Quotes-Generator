@@ -3,15 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Rakkas&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Random Quotes Generator</title>
   </head>
   <body>
-    <h1>Random Quotes Generator</h1>
+    <h1 class="title">Random Quotes Generator</h1>
 
     <div class="quotes">
-      <ul class="share-box">
+      <ul class="share-box" dir="ltr">
         <i class="fa-solid fa-xmark close"></i>
 
         <li class="share-li">
@@ -28,6 +34,8 @@
         </li>
       </ul>
       <i class="fa-solid fa-heart heart" title="add to favourites"></i>
+      <i class="fa-solid fa-language lang" title="AR & EN"></i>
+      <span data-lang="en" class="lang-span"></span>
       <i class="fa-solid fa-share share" title="share"></i>
       <i class="fa-solid fa-copy copy" title="copy"></i>
       <span class="quote-id">0 </span>
@@ -41,29 +49,27 @@
 
         <p>- <span class="quote-author"></span> -</p>
         <i class="fa-solid fa-play play"></i>
-        <!-- <i class="fa-solid fa-pause"></i> -->
       </div>
       <div class="buttons">
         <button class="generate">Generate Quote</button>
         <button class="auto">Auto Generate</button>
-        <!-- <button class="stop">Stop Generate</button> -->
       </div>
     </div>
 
-    <div class="alert">
+    <div class="alert" dir="ltr">
       <i class="fa-solid fa-xmark alert-close"></i>
       <p class="alert-message">This is an alert message</p>
     </div>
 
     <div class="favourite-seciton">
       <div class="head">
-        <h2>Favourite Quotes</h2>
+        <h2 class="fav-header">Favourite Quotes</h2>
         <button class="clear-favorites" title="Clear All">
           <i class="fa-solid fa-trash"></i>
         </button>
       </div>
 
-      <ul class="favourite-quotes"></ul>
+      <ul class="favourite-quotes" dir="ltr"></ul>
     </div>
 
     <footer>

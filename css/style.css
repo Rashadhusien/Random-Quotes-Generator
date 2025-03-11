@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: "Dancing Script", cursive;
   font-optical-sizing: auto;
   background-color: #eee;
   margin: 0;
@@ -12,6 +12,7 @@ body {
 }
 
 .alert {
+  font-family: sans-serif;
   position: fixed;
   z-index: 1000;
   top: 90px;
@@ -52,6 +53,8 @@ h1 {
   margin: 0 0 20px;
   background-color: #121128;
   text-align: center;
+  font-weight: bolder;
+  font-size: 40px;
   color: white;
 }
 
@@ -119,7 +122,9 @@ ul.share-box .share-li i.twitter {
 
 .quotes .copy,
 .quotes .heart,
-.quotes .share {
+.quotes .share,
+.quotes .lang,
+.quotes .lang-span {
   font-size: 20px;
   color: #aaa;
   position: absolute;
@@ -127,14 +132,25 @@ ul.share-box .share-li i.twitter {
   cursor: pointer;
 }
 
-.quotes .copy {
-  right: 60px;
-}
-
 .quotes .heart {
   left: 20px;
 }
 
+.quotes .lang {
+  left: 60px;
+}
+
+.quotes .lang-span {
+  font-size: 16px;
+  left: 90px;
+  text-transform: uppercase;
+
+  top: 21px;
+}
+
+.quotes .copy {
+  right: 60px;
+}
 .quotes .share {
   right: 20px;
 }
@@ -148,7 +164,8 @@ ul.share-box .share-li i.twitter {
 }
 
 .quotes .copy:hover,
-.quotes .share:hover {
+.quotes .share:hover,
+.quotes .lang:hover {
   color: white;
 }
 
@@ -213,7 +230,7 @@ ul.share-box .share-li i.twitter {
 
 .quote-display h2 {
   padding: 30px 20px 25px 20px;
-  font-size: 25px;
+  font-size: 30px;
   line-height: 1.8;
   font-style: italic;
 }
