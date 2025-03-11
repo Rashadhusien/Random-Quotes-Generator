@@ -43,7 +43,6 @@ let currentQuote;
 // Function to set the voice based on current language
 function setVoice() {
   const voices = speechSynthesis.getVoices();
-  console.log("Available voices:", voices);
 
   const voice =
     voices.find((v) => v.lang.startsWith(isArabic ? "ar" : "en")) || voices[0];
@@ -352,7 +351,6 @@ btnAuto.onclick = () => {
       "success"
     );
     btnAuto.style.backgroundColor = "#f44";
-    console.log(getDisplayedQuote());
   } else {
     showAlert(
       "Auto-generating quotes: OFF",
